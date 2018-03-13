@@ -3,7 +3,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Modal from './modal';
+import Squad from './squad';
 import { fetchStandings, fetchTeams } from '../actions';
+import { Provider } from 'react-redux';
+import reducers from '../reducers';
+import { createStore } from 'redux';
 
 export class Standings extends Component {
     constructor(props) {
@@ -46,8 +50,6 @@ export class Standings extends Component {
     }
 
     render() {
-        console.log(this.state);
-
         return (
             <div>
                 <Link className="btn btn-primary" to="/">Back</Link>
@@ -73,10 +75,24 @@ export class Standings extends Component {
                         show={this.state.isOpen}
                         onClose={this.closeModal}>
                         <nav className="navbar navbar-light bg-light">
-                            <p>{this.state.teams.name}</p>
-                            <a onClick={this.closeModal}>x</a>
+                            <div className="container-fluid">
+                                <div className="navbar-header row modal-header">
+                                    <h3 className="col-md-11">{this.state.teams.name}</h3>
+                                    <button className="btn btn-primary btn-sm" onClick={this.closeModal}>x</button>
+                                </div>
+                            </div>
                         </nav>
-                        <img src={this.state.teams.logo_path} alt={this.state.teams.name} />
+                        <div className="row">
+                            <div className="col-md-3">
+                                <img className="team-logo" src={this.state.teams.logo_path} alt={this.state.teams.name} />
+                            </div>
+                            <div className="col-md-8">
+                                <Provider store={createStore(reducers)}>
+                                    <Squad team={this.state.teams.squad} />
+                                </Provider>
+                            </div>
+                        </div>
+
                     </Modal>)
                 }
             </div>

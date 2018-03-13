@@ -13,7 +13,7 @@ export class Leagues extends Component {
         return _.map(this.props.leagues, league => {
             return (
                 <Link to={`/league/${league.current_season_id}`}>
-                    <li className="list-item" key={league.id}>
+                    <li key={league.id} className="list-item">
                         {league.name}
                     </li>
                 </Link>

@@ -7,6 +7,8 @@ export const FETCH_TEAMS = "fetch_teams";
 const ROOT_URL = "https://soccer.sportmonks.com/api/v2.0";
 const API_KEY = "?api_token=HOLCAStI6Z0OfdoPbjdSg5b41Q17w2W5P4WuoIBdC66Z54kUEvGWPIe33UYC";
 
+/* const API_KEY = "?api_token=tZsS8mf8Rk6v9HSWJEPPqNqxXCdcWdpJiFAxhMYhwATBfhAipdGLMWzPCPPq"; */
+
 export function fetchLeagues() {
     const request = axios.get(`${ROOT_URL}/leagues${API_KEY}`);
     return {

@@ -8,6 +8,7 @@ import promise from 'redux-promise';
 import Leagues from "./components/leagues";
 import Standings from "./components/standings";
 import Teams from "./components/teams";
+import Squad from "./components/squad";
 import reducers from './reducers';
 
 const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
@@ -17,7 +18,7 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Switch>
-                    <Route path="/team/:id" component={Teams} />
+                    {/* <Route path="/team/:id" component={Teams} /> */}
                     <Route path="/league/:id" component={Standings} />
                     <Route path="/" component={Leagues} />
                 </Switch>
