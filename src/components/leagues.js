@@ -13,9 +13,11 @@ export class Leagues extends Component {
         return _.map(this.props.leagues, league => {
             return (
                 <Link to={`/league/${league.current_season_id}`}>
-                    <li key={league.id} className="list-item">
-                        {league.name}
-                    </li>
+                    <div key={league.id} className="card w-50 col-md-6">
+                        <div className="card-block">
+                            <h3 className="card-title">{league.name}</h3>
+                        </div>
+                    </div>
                 </Link>
             );
         });
@@ -24,7 +26,12 @@ export class Leagues extends Component {
     render() {
         return (
             <div>
-                <ul className="list-group"> {this.renderLeagues()} </ul>
+                <div className="jumbotron">
+                    <h1 class="display-3">SoccerStats</h1>
+                </div>
+                <div className="row">
+                    {this.renderLeagues()}
+                </div>
             </div>
         )
     }

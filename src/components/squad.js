@@ -41,7 +41,6 @@ export class Squad extends Component {
                     <td>{player[0].appearences}</td>
                     <td>{player[0].yellowcards}</td>
                     <td>{player[0].redcards}</td>
-                    <td>{player[0].minutes}</td>
                     <td>{player[0].goals}</td>
                     <td>{player[0].assists}</td>
                 </tr>
@@ -56,7 +55,7 @@ export class Squad extends Component {
 
         return (
             <div className="squad-tbl">
-                <table className="table table-sm table-hover table-striped table-bordered">
+                <table className="table table-sm table-striped">
                     <thead>
                         <tr>
                             <th scope="col"></th>
@@ -66,7 +65,6 @@ export class Squad extends Component {
                             <th scope="col">M. Played</th>
                             <th scope="col">Yellow</th>
                             <th scope="col">Red</th>
-                            <th scope="col">Min</th>
                             <th scope="col">G</th>
                             <th scope="col">A</th>
                         </tr>

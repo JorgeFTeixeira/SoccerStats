@@ -23,6 +23,7 @@ body .modal {
     outline: none;
     padding: 30px;
     margin: 0 auto;
+    margin-top: 3%;
     display: block; 
 }
 
@@ -39,3 +40,20 @@ body .modal {
     overflow-y: scroll;
 }
 
+.card{
+    margin-top: 2%;
+    text-align: center;
+}
+
+.jumbotron{
+    margin-top: 3%;
+    text-align: center;
+}
+
+.nav-title{
+    margin-left: 40%;
+}
+
+.navbar{
+    margin-bottom: 2%;
+}
