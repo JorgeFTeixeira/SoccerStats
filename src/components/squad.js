@@ -1,10 +1,8 @@
 import _ from 'lodash';
 import React, { Component } from 'react'
-
+import { ROOT_URL } from '../actions';
+import { API_KEY } from '../actions';
 import axios from 'axios';
-const ROOT_URL = "https://soccer.sportmonks.com/api/v2.0";
-const API_KEY = "?api_token=HOLCAStI6Z0OfdoPbjdSg5b41Q17w2W5P4WuoIBdC66Z54kUEvGWPIe33UYC";
-/* const API_KEY = "?api_token=tZsS8mf8Rk6v9HSWJEPPqNqxXCdcWdpJiFAxhMYhwATBfhAipdGLMWzPCPPq"; */
 
 export class Squad extends Component {
     constructor(props) {
@@ -51,8 +49,6 @@ export class Squad extends Component {
     render() {
         if (this.props.team.data.length != this.state.players.length)
             return <div>Loading...</div>
-        console.log(this.state);
-
         return (
             <div className="squad-tbl">
                 <table className="table table-sm table-striped">

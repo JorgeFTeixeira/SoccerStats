@@ -3,11 +3,26 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { fetchLeagues } from '../actions';
+import { ROOT_URL } from '../actions';
+import { API_KEY } from '../actions';
+import axios from 'axios';
 
 export class Leagues extends Component {
     componentDidMount() {
-        this.props.fetchLeagues();
+        this.props.fetchLeagues().then(() => {
+            this.getSeasons();
+        });
     }
+
+/*     getSeasons() {
+        const request = axios.get(`${ROOT_URL}/seasons${API_KEY}`).then((res) => {
+            this.setState(() => {
+                return {
+                    seasons: res.data.data
+                }
+            })
+        });
+    } */
 
     renderLeagues() {
         return _.map(this.props.leagues, league => {
@@ -24,6 +39,9 @@ export class Leagues extends Component {
     }
 
     render() {
+        if (!this.props.leagues)
+            return <div>Loading...</div>
+
         return (
             <div>
                 <div className="jumbotron">
