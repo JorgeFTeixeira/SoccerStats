@@ -64,10 +64,9 @@ export class Standings extends Component {
     }
 
     render() {
-        console.log(this.state);
         return (
             <div>
-                <nav className="navbar navbar-light bg-faded">
+                <nav className="navbar navbar-light bg-faded navbar-title">
                     <Link className="" to="/">&lt; Back</Link>
                     <span className="navbar-text nav-title">
                         SoccerStats

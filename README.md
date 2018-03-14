@@ -1,5 +1,6 @@
-Checkout this repo, install dependencies, then start the gulp process with the following:
+This project was made using React/Redux technologies and Bootstrap framework
 
+This are the steps need to run the application:
 ```
 > npm install
 > npm start

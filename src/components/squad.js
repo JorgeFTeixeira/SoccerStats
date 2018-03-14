@@ -11,15 +11,11 @@ export class Squad extends Component {
         this.props.team.data.map(p => {
             this.buildArray(p, p.player_id)
         })
-        /* this.buildArray(this.props.team.data[0], "107") */
     }
 
     buildArray(p, id) {
         const request = axios.get(`${ROOT_URL}/players/${id}${API_KEY}`).then((res) => {
-
             var player = [p, res.data.data];
-            console.log(player);
-
             this.setState(() => {
                 return {
                     players: [...this.state.players, player]
@@ -51,14 +47,14 @@ export class Squad extends Component {
             return <div>Loading...</div>
         return (
             <div className="squad-tbl">
-                <table className="table table-sm table-striped">
+                <table className="table table-sm">
                     <thead>
                         <tr>
                             <th scope="col"></th>
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Nationality</th>
-                            <th scope="col">M. Played</th>
+                            <th scope="col">Played</th>
                             <th scope="col">Yellow</th>
                             <th scope="col">Red</th>
                             <th scope="col">G</th>

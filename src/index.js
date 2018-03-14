@@ -7,7 +7,6 @@ import promise from 'redux-promise';
 
 import Leagues from "./components/leagues";
 import Standings from "./components/standings";
-import Teams from "./components/teams";
 import Squad from "./components/squad";
 import reducers from './reducers';
 

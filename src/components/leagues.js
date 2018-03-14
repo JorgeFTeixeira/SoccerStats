@@ -9,26 +9,14 @@ import axios from 'axios';
 
 export class Leagues extends Component {
     componentDidMount() {
-        this.props.fetchLeagues().then(() => {
-            this.getSeasons();
-        });
+        this.props.fetchLeagues();
     }
-
-/*     getSeasons() {
-        const request = axios.get(`${ROOT_URL}/seasons${API_KEY}`).then((res) => {
-            this.setState(() => {
-                return {
-                    seasons: res.data.data
-                }
-            })
-        });
-    } */
 
     renderLeagues() {
         return _.map(this.props.leagues, league => {
             return (
                 <Link to={`/league/${league.current_season_id}`}>
-                    <div key={league.id} className="card w-50 col-md-6">
+                    <div key={league.id} className="card w-50 col-md-4 col-md-offset-1">
                         <div className="card-block">
                             <h3 className="card-title">{league.name}</h3>
                         </div>
@@ -45,9 +33,9 @@ export class Leagues extends Component {
         return (
             <div>
                 <div className="jumbotron">
-                    <h1 class="display-3">SoccerStats</h1>
+                    <h1 className="display-3">SoccerStats</h1>
                 </div>
-                <div className="row">
+                <div className="row leagues">
                     {this.renderLeagues()}
                 </div>
             </div>

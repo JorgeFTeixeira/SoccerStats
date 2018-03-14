@@ -1,3 +1,11 @@
+html{
+    background-color: #6a87b7;
+}
+
+body{
+    background-color: #fff0 !important;
+}
+
 .overlay {
     background: rgba(0, 0, 0, 0.4);
     width:100%; 
@@ -46,6 +54,7 @@ body .modal {
 }
 
 .jumbotron{
+    
     margin-top: 3%;
     text-align: center;
 }
@@ -56,4 +65,16 @@ body .modal {
 
 .navbar{
     margin-bottom: 2%;
+}
+
+.leagues{
+    margin-left: 6% !important;
+}
+
+table {
+    background-color: #ECEFF1 !important;
+}
+
+table tr:hover{
+    background-color: #81C784 !important;
 }
